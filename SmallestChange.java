@@ -22,9 +22,8 @@ public class SmallestChange {
 
     for (int coin : coins){
       if (x-coin >= 0) { //skip if subtraction would cause value to be negative (too much change taken out)
-
         int c = change(x - coin, coins);
-        if (min > c +1) min = c + 1;
+        if (min > c + 1) min = c + 1;
       }
     }
     return min;
