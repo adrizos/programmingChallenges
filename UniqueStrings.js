@@ -1,11 +1,14 @@
-var string = "Hbdsad dfk";
+var string = "hello world";
+
+console.log('The number of touchingPairs are: ' + touchingPairs(string));
+console.log('There are repeating characters in this string? ' + uniqueStrings(string));
 
 //check if there are any matching touching pairs
-function isUnique (string){
+function touchingPairs (string){
   var count = 0;
-  newString = string.split('');
+  var newString = string.split('');
   for (var i = 0; i < newString.length-1; i++) {
-    for (var x = 0; x < newString.lenght; x++){
+    for (var x = 0; x < newString.length; x++){
       if (newString[i] === newString[x]){
         count+= 1;
       }
@@ -16,3 +19,16 @@ function isUnique (string){
 
 
 //are there any unique characters (using additional memory)
+function uniqueStrings(string){
+  var newString = string.split('');
+  for (var i = 0; i < newString.length-1; i++){     //minus 1 here as the last element has nothing to else to compare to
+    oneLessString = newString.shift();
+    for (var x = 0; x < oneLessString.length; x++){
+      console.log(newString[i] + ' , ' + oneLessString[x]);
+      if (newString[i] == oneLessString[x]){
+        return 1;
+      }
+    }
+  }
+  return -1;
+}
