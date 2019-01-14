@@ -8,10 +8,9 @@ function touchingPairs (string){
   var count = 0;
   var newString = string.split('');
   for (var i = 0; i < newString.length-1; i++) {
-    for (var x = 0; x < newString.length; x++){
-      if (newString[i] === newString[x]){
-        count+= 1;
-      }
+    if (newString[i] === newString[i+1]) {
+      //console.log("comparing " + newString[i] + " to " + newString[i+1]);
+      count++;
     }
   }
   return count;
